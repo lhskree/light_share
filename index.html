@@ -6,11 +6,15 @@
 	<meta property="og:title" content="Light Share API" />
 	<meta property="og:image" content="http://www.randomlists.com/img/animals/chinchilla.jpg" />
 	<meta property="og:description" content="A lightweight sharing set." />
+
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+	<script src="./ls.min.js"></script>
 
 	<style>
 	html, body, h1, p { font-family: 'Ariel', sans-serif; color: #444;}
+	img {display: block; margin: 50px auto; max-width: 250px;}
+	h1{text-align: center; margin: 25px auto; padding: 0 0 25px; border-bottom: 2px solid #bbb;}
 	.wrapper { max-width: 400px; margin: 100px auto; line-height: 2em;}
 	.wrapper p {text-align: justify;}
 	.socialIcon { height: 40px; width: 40px;}
@@ -29,6 +33,7 @@
 <body>
 
 <div class="wrapper">
+	<img src="./Chinchilla_T.png" alt='A happy little chinchilla friend.'/>
 	<h1>Light Share</h1>
 	<p>Ethical salvia cardigan, DIY fanny pack bicycle rights butcher 8-bit Odd Future Austin pickled scenester Vice Portland PBR. High Life Carles drinking vinegar DIY, XOXO viral tofu Echo Park. Cred Helvetica dreamcatcher roof party. Master cleanse four dollar toast umami High Life plaid. Selvage drinking vinegar dreamcatcher Helvetica, letterpress 8-bit pork belly migas banh mi. Authentic butcher meh occupy Intelligentsia cardigan. PBR gentrify roof party organic, disrupt dreamcatcher XOXO.J</p>
 
@@ -95,63 +100,5 @@
 		</li>
 	</ul>
 	</div>
-
-<script>
-$(document).ready( function () {
-	var $href = $("link[rel=canonical").attr("href");
-	if(!$href) { $href = document.URL; }
-	$href = encodeURIComponent($href);
-	var newWindow = "window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;";
-
-	// Email
-	var mailto = "mailto:?",
-		subject = "subject=" + encodeURI("Light Share doesn't use a lot of js"),
-		body = "body=" + encodeURI("Light Share's only hard dependency is jQuery, but I'm thinking I might make it so just vanilla JS will due.\n\n" +
-			"Oh, that's right, the URL you want is: ") + decodeURI($href) + encodeURI(".\n\n-Logan");
-	$("#mail").attr("href", mailto + "&" + subject + "&" + body);
-
-	// FB1
-	var fb1_api = "https://www.facebook.com/dialog/share?",
-		id = "app_id=787311388023796",
-		display = "display=popup",
-		href = "href=" + $href,
-		redirect = "redirect_uri=" + $href;
-	$("#fb1").attr("href", fb1_api + id + "&" + display + "&" + href + "&" + redirect).attr("onclick", newWindow);
-
-	// FB2
-	var fb2_api = "https://www.facebook.com/sharer/sharer.php";
-	$("#fb2").attr("href", fb2_api).attr("onclick", newWindow);
-
-	// Gplus
-	var gplus_api = "https://plus.google.com/share?",
-		url = "url=" + $href;
-	$("#gplus").attr("href", gplus_api + url).attr("onclick", newWindow);
-
-	// Twitter
-	var tw_api = "https://twitter.com/share";
-	$("#tw").attr("href", tw_api).attr("onclick", newWindow);
-
-	// LinkedIn
-	var lin_api = "https://www.linkedin.com/shareArticle?",
-		lin_url = "url=" + $href,
-		title = "title=" + encodeURI("Light Share lightweight sharing"),
-		summary = "summary=" + encodeURI("A minimally intrusive social sharing button group."),
-		source = "source=" + $href;
-	$("#lin").attr("href", lin_api + lin_url + "&" + title + "&" + summary + "&" + source).attr("onclick", newWindow);
-
-	// LightShare show / hide
-	var threshold = 300,
-		$ls = $('.lightShare');
-	$ls.hide();
-	$(window).on('scroll', function () {
-		if ($(window).scrollTop() > threshold) {
-			$ls.show("slide", { direction : "right"}, 'slow');
-		} else {
-			$ls.hide("slide", { direction : "right"}, 'slow');
-		}
-	});
-});
-</script>
-
 </body>
 </html>
