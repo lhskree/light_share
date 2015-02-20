@@ -22,38 +22,33 @@
 	  ga('create', 'UA-37314706-2', 'auto');
 	  ga('send', 'pageview');
 
-	  function addListener(element, type, callback) {
- 			if (element.addEventListener) element.addEventListener(type, callback);
- 			else if (element.attachEvent) element.attachEvent('on' + type, callback);
-		}
-
 		var emailLink = document.getElementById("mail");
-		addListener(emailLink, 'click', function () {
+		emailLink.addEventListener('click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var fb1Link = document.getElementById("fb1");
-		addListener(fb1Link, 'click', function () {
+		fb1Link.addEventListener('click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var fb2Link = document.getElementById("fb2");
-		addListener(fb2Link, 'click', function () {
+		fb2Link.addEventListener('click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var gplusLink = document.getElementById("gplus");
-		addListener(gplus, 'click', function () {
+		gplus.addEventListener('click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var twitterLink = document.getElementById("tw");
-		addListener(twitterLink, 'click', function () {
+		twitterLink.addEventListener('click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var linkedLink = document.getElementById("lin");
-		addListener(linkedLink, 'click', function () {
+		linkedLink.addEventListener('click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
