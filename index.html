@@ -13,7 +13,7 @@
 
 	<!-- Analytics -->
 	<script>	
-	
+	window.onload = function () {
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -22,35 +22,41 @@
 	  ga('create', 'UA-37314706-2', 'auto');
 	  ga('send', 'pageview');
 
+	  function addListener(element, type, callback) {
+ 			if (element.addEventListener) element.addEventListener(type, callback);
+ 			else if (element.attachEvent) element.attachEvent('on' + type, callback);
+		}
+
 		var emailLink = document.getElementById("mail");
-		emailLink.addEventListener('click', function () {
+		addListener(emailLink, 'click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var fb1Link = document.getElementById("fb1");
-		fb1Link.addEventListener('click', function () {
+		addListener(fb1Link, 'click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var fb2Link = document.getElementById("fb2");
-		fb2Link.addEventListener('click', function () {
+		addListener(fb2Link, 'click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var gplusLink = document.getElementById("gplus");
-		gplus.addEventListener('click', function () {
+		addListener(gplus, 'click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var twitterLink = document.getElementById("tw");
-		twitterLink.addEventListener('click', function () {
+		addListener(twitterLink, 'click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
 
 		var linkedLink = document.getElementById("lin");
-		linkedLink.addEventListener('click', function () {
+		addListener(linkedLink, 'click', function () {
 			ga('send', 'event', 'sharing', 'light share');
 		});
+	};
 
 	</script>
 
