@@ -60,20 +60,20 @@ $(document).ready( function () {
 		display = "display=popup",
 		href = "href=" + $href,
 		redirect = "redirect_uri=" + $href;
-	$("#ls1").attr("href", fb1_api + id + "&" + display + "&" + href + "&" + redirect).attr("onclick", newWindow);
+	$("#ls1").attr("href", fb1_api + id + "&" + display + "&" + href + "&" + redirect).attr("target", "_blank");
 
 	// FB2
 	var fb2_api = "https://www.facebook.com/sharer/sharer.php";
-	$("#ls2").attr("href", fb2_api).attr("onclick", newWindow);
+	$("#ls2").attr("href", fb2_api).attr("target", "_blank");
 
 	// Gplus
 	var gplus_api = "https://plus.google.com/share?",
 		url = "url=" + $href;
-	$("#ls3").attr("href", gplus_api + url).attr("onclick", newWindow);
+	$("#ls3").attr("href", gplus_api + url).attr("target", "_blank");
 
 	// Twitter
 	var tw_api = "https://twitter.com/share";
-	$("#ls4").attr("href", tw_api).attr("onclick", newWindow);
+	$("#ls4").attr("href", tw_api).attr("target", "_blank");
 
 	// LinkedIn
 	var lin_api = "https://www.linkedin.com/shareArticle?",
@@ -81,7 +81,7 @@ $(document).ready( function () {
 		title = "title=" + encodeURI("Light Share lightweight sharing"),
 		summary = "summary=" + encodeURI("A minimally intrusive social sharing button group."),
 		source = "source=" + $href;
-	$("#ls5").attr("href", lin_api + lin_url + "&" + title + "&" + summary + "&" + source).attr("onclick", newWindow);
+	$("#ls5").attr("href", lin_api + lin_url + "&" + title + "&" + summary + "&" + source).attr("target", "_blank");
 
 	// LightShare show / hide
 	var threshold = 300,
