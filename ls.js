@@ -1,24 +1,13 @@
 $(document).ready( function () {
 
-	/*	
-	*
-	*/
+	var shareLabel = ["mail", "facebook", "google plus", "twitter", "linkedin"];
 
-	var shareLabel = ["mail", "facebook", "facebook v2", "google plus", "twitter", "linkedin"];
-	for (var i = 0, len = imageURLs.length; i < len; i++) {
-		var li = document.createElement("li");
-		var a = document.createElement("a");
+	/*
 		a.setAttribute("data-label", shareLabel[i]);
 		addListener(a, 'click', function () {
 			ga('send', 'event', 'social', 'light share', this.getAttribute("data-label"));
 		});
-		a.id = "ls" + i;
-		a.innerHTML = imageURLs[i];
-		li.appendChild(a);
-		ul.appendChild(li);
-	}
-	ls.appendChild(ul);
-	document.body.appendChild(ls);
+*/
 
 	var $href = $("link[rel=canonical").attr("href");
 	if(!$href) { $href = document.URL; }
@@ -26,10 +15,10 @@ $(document).ready( function () {
 	var newWindow = "window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;";
 
 	// Email
-	
+
 	// TODO - integrate into various email clients
 
-	// FB1
+	// Facebook with App_ID
 	var fb1_api = "https://www.facebook.com/dialog/share?",
 		id = "app_id=787311388023796",
 		display = "display=popup",
