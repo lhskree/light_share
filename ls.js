@@ -1,4 +1,4 @@
-$(document).ready( function () {
+window.onload = function () {
 
 	var shareLabel = ["mail", "facebook", "google plus", "twitter", "linkedin"];
 
@@ -9,9 +9,10 @@ $(document).ready( function () {
 		});
 */
 
-	var $href = $("link[rel=canonical").attr("href");
-	if(!$href) { $href = document.URL; }
-	$href = encodeURIComponent($href);
+	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute("href") :
+						document.querySelector("meta[property='og:url']") ? document.querySelector("meta[property='og:url']").getAttribute("content") :
+						document.URL;
+	url = encodeURIComponent(url);
 	var newWindow = "window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;";
 
 	// Email
@@ -22,8 +23,8 @@ $(document).ready( function () {
 	var fb1_api = "https://www.facebook.com/dialog/share?",
 		id = "app_id=787311388023796",
 		display = "display=popup",
-		href = "href=" + $href,
-		redirect = "redirect_uri=" + $href;
+		href = "href=" + url,
+		redirect = "redirect_uri=" + url;
 	$("#ls1").attr("href", fb1_api + id + "&" + display + "&" + href + "&" + redirect).attr("target", "_blank");
 
 	// FB2
@@ -32,7 +33,7 @@ $(document).ready( function () {
 
 	// Gplus
 	var gplus_api = "https://plus.google.com/share?",
-		url = "url=" + $href;
+		url = "url=" + url;
 	$("#ls3").attr("href", gplus_api + url).attr("target", "_blank");
 
 	// Twitter
@@ -41,10 +42,10 @@ $(document).ready( function () {
 
 	// LinkedIn
 	var lin_api = "https://www.linkedin.com/shareArticle?",
-		lin_url = "url=" + $href,
+		lin_url = "url=" + url,
 		title = "title=" + encodeURI("Light Share lightweight sharing"),
 		summary = "summary=" + encodeURI("A minimally intrusive social sharing button group."),
-		source = "source=" + $href;
+		source = "source=" + url;
 	$("#ls5").attr("href", lin_api + lin_url + "&" + title + "&" + summary + "&" + source).attr("target", "_blank");
 
 	// LightShare show / hide
@@ -64,4 +65,4 @@ $(document).ready( function () {
 			if (element.addEventListener) element.addEventListener(type, callback);
 			else if (element.attachEvent) element.attachEvent('on' + type, callback);
 	}
-});
+}
