@@ -10,10 +10,6 @@ function getEncodedFormData () {
 	return data;
 }
 
-function closeLSMI () {
-	document.getElementById('lightShareMailInterface').style.display = "none";
-}
-
 function createGoogleLink () {
 	var data = getEncodedFormData(),
 		link = document.getElementById('ls_google_mail'),

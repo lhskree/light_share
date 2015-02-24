@@ -22,7 +22,7 @@ window.onload = function () {
 		ls_lin = document.getElementById('ls_lin');
 
 	// Email
-	ls_mail.onclick = function () { var lsmi = document.getElementById('lightShareMailInterface'); lsmi.style.display = "block"; console.log("clicked");}
+	ls_mail.onclick = function () { var lsmi = document.getElementById('lightShareMailInterface'); lsmi.style.display = "block";}
 	ls_mail.setAttribute(h, "#");
 	ls_mail.setAttribute(t, "");
 	// TODO - integrate into various email clients
@@ -119,8 +119,8 @@ window.onload = function () {
 	x.onclick = function () { lsmi.style.display = "none"; };
 	window.onkeydown = function (key) {
 		if (key.keyCode == "27") {
-			if (lmsi.style.display !== "none") {
-				lmsi.style.display = "none";
+			if (lsmi.style.display !== "none") {
+				lsmi.style.display = "none";
 			}
 		}
 	};
