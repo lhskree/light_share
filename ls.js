@@ -31,8 +31,8 @@ window.onload = function () {
 
 	// Gplus
 	var gplus_api = "https://plus.google.com/share?",
-		url = "url=" + url;
-	ls_gplus.setAttribute("href", gplus_api + url);
+		gplus_url = "url=" + url;
+	ls_gplus.setAttribute("href", gplus_api + gplus_url);
 	ls_gplus.setAttribute("target", "");
 	ls_gplus.setAttribute("onclick", newWindow);
 
