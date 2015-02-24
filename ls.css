@@ -1,8 +1,8 @@
 .socialIcon { height: 40px; width: 40px; }
-	.lightShare { position: fixed; right: 0; top: 15%; background-color: white; box-shadow: -2px 2px 5px #777; border-radius: 5px 0 0 5px;}
+	.lightShare { position: fixed; right: 0; top: 15%; background-color: white; box-shadow: -2px 2px 5px #777; border-radius: 5px 0 0 5px; }
 	.lightShare ul { list-style: none; padding: 0; margin: 0; }
 	.lightShare ul li { margin: 5px}
-	#ls_mail svg { fill: #999;}
+	#ls_mail svg { fill: #09a9a9;}
 	#ls_fb svg { fill: #3B5998;}
 	#ls_gplus svg { fill: #dd4b39;}
 	#ls_tw svg { fill: #55acee;}

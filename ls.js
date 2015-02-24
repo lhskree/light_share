@@ -56,20 +56,20 @@ window.onload = function () {
 	ls_lin.setAttribute("onclick", newWindow);
 
 	// Show / hide the light share section
-	var threshold = 375;
+	var threshold = 50;
 	var lightShare = document.getElementsByClassName("lightShare")[0];
+	lightShare.style.right = "-300px";
 	window.onscroll = function () {
-		console.log(window.pageXOffset);
-
+		lightShare.style.transition = "1s";
 		// IE 9-
 		if (window.pageYOffset == undefined) {
 			window.pageYOffset = document.documentElement.scrollTop;
 		}
 
 		if (window.pageYOffset > threshold) {
-			lightShare.style.display = "inherit";
+			lightShare.style.right = 0;
 		} else {
-			lightShare.style.display = "none";
+			lightShare.style.right = "-300px";
 		}
 	};
 
@@ -88,8 +88,8 @@ window.onload = function () {
 	ls_buttons.push(ls_lin);
 
 	for (var i = 0; i < ls_buttons.length; i++) {
-		setAttribute("data-label", shareLabel[i]);
-			addListener(a, 'click', function () {
+		ls_buttons[i].setAttribute("data-label", shareLabel[i]);
+			addListener(ls_buttons[i], 'click', function () {
 				ga('send', 'event', 'social', 'light share', this.getAttribute("data-label"));
 		});
 	}
