@@ -1,6 +1,12 @@
 window.onload = function () {
 
-	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute("href") : // Looks for canonical URL first
+	// Sneaky min optimization
+	var t = "target",
+		h = "href",
+		o = "onclick";
+
+
+	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute(h) : // Looks for canonical URL first
 						document.querySelector("meta[property='og:url']") ? document.querySelector("meta[property='og:url']").getAttribute("content") : // OG fallback
 						document.URL; // Finally, just document.URL
 	url = encodeURIComponent(url);
@@ -25,20 +31,20 @@ window.onload = function () {
 		display = "&display=popup",
 		href = "&href=" + url,
 		redirect = "&redirect_uri=" + url;
-	ls_fb.setAttribute("href", fb_api + id + display + href + redirect);
-	ls_fb.setAttribute("target", "");
-	ls_fb.setAttribute("onclick", newWindow);
+	ls_fb.setAttribute(h, fb_api + id + display + href + redirect);
+	ls_fb.setAttribute(t, "");
+	ls_fb.setAttribute(o, newWindow);
 
 	// Gplus
 	var gplus_api = "https://plus.google.com/share?",
 		gplus_url = "url=" + url;
-	ls_gplus.setAttribute("href", gplus_api + gplus_url);
-	ls_gplus.setAttribute("target", "");
-	ls_gplus.setAttribute("onclick", newWindow);
+	ls_gplus.setAttribute(h, gplus_api + gplus_url);
+	ls_gplus.setAttribute(t, "");
+	ls_gplus.setAttribute(o, newWindow);
 
 	// Twitter is already covered by the link
-	ls_tw.setAttribute("target", "");
-	ls_tw.setAttribute("onclick", newWindow);
+	ls_tw.setAttribute(t, "");
+	ls_tw.setAttribute(o, newWindow);
 
 	// LinkedIn
 	// If no OG data is available, set these properties
@@ -48,12 +54,12 @@ window.onload = function () {
 		var title = "&title=" + encodeURI("Light Share lightweight sharing"),
 			summary = "&summary=" + encodeURI("A minimally intrusive social sharing button group."),
 			source = "&source=" + url;
-		ls_lin.setAttribute("href", lin_api + lin_url + title + summary + source);
+		ls_lin.setAttribute(h, lin_api + lin_url + title + summary + source);
 	} else {
-		ls_lin.setAttribute("href", lin_api + lin_url);
+		ls_lin.setAttribute(h, lin_api + lin_url);
 	}
-	ls_lin.setAttribute("target", "");
-	ls_lin.setAttribute("onclick", newWindow);
+	ls_lin.setAttribute(t, "");
+	ls_lin.setAttribute(o, newWindow);
 
 	// Show / hide the light share section
 	var threshold = 50;
