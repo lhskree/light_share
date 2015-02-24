@@ -1,68 +1,94 @@
 window.onload = function () {
 
-	var shareLabel = ["mail", "facebook", "google plus", "twitter", "linkedin"];
-
-	/*
-		a.setAttribute("data-label", shareLabel[i]);
-		addListener(a, 'click', function () {
-			ga('send', 'event', 'social', 'light share', this.getAttribute("data-label"));
-		});
-*/
-
-	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute("href") :
-						document.querySelector("meta[property='og:url']") ? document.querySelector("meta[property='og:url']").getAttribute("content") :
-						document.URL;
+	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute("href") : // Looks for canonical URL first
+						document.querySelector("meta[property='og:url']") ? document.querySelector("meta[property='og:url']").getAttribute("content") : // OG fallback
+						document.URL; // Finally, just document.URL
 	url = encodeURIComponent(url);
-	var newWindow = "window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;";
+
+	// Opens links in a new window
+	var newWindow = "window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500');return false;";
+
+	// The sharing buttons
+	var ls_mail = document.getElementById('ls_mail'),
+		ls_fb = document.getElementById('ls_fb'),
+		ls_gplus = document.getElementById('ls_gplus'),
+		ls_tw = document.getElementById('ls_tw'),
+		ls_lin = document.getElementById('ls_lin');
 
 	// Email
 
 	// TODO - integrate into various email clients
 
 	// Facebook with App_ID
-	var fb1_api = "https://www.facebook.com/dialog/share?",
-		id = "app_id=787311388023796",
-		display = "display=popup",
-		href = "href=" + url,
-		redirect = "redirect_uri=" + url;
-	$("#ls1").attr("href", fb1_api + id + "&" + display + "&" + href + "&" + redirect).attr("target", "_blank");
-
-	// FB2
-	var fb2_api = "https://www.facebook.com/sharer/sharer.php";
-	$("#ls2").attr("href", fb2_api).attr("target", "_blank");
+	var fb_api = "https://www.facebook.com/dialog/share?",
+		id = "&app_id=787311388023796", // This is a unique id like Google Analytics API key
+		display = "&display=popup",
+		href = "&href=" + url,
+		redirect = "&redirect_uri=" + url;
+	ls_fb.setAttribute("href", fb_api + id + display + href + redirect);
+	ls_fb.setAttribute("target", "");
+	ls_fb.setAttribute("onclick", newWindow);
 
 	// Gplus
 	var gplus_api = "https://plus.google.com/share?",
 		url = "url=" + url;
-	$("#ls3").attr("href", gplus_api + url).attr("target", "_blank");
+	ls_gplus.setAttribute("href", gplus_api + url);
+	ls_gplus.setAttribute("target", "");
+	ls_gplus.setAttribute("onclick", newWindow);
 
-	// Twitter
-	var tw_api = "https://twitter.com/share";
-	$("#ls4").attr("href", tw_api).attr("target", "_blank");
+	// Twitter is already covered by the link
+	ls_tw.setAttribute("target", "");
+	ls_tw.setAttribute("onclick", newWindow);
 
 	// LinkedIn
-	var lin_api = "https://www.linkedin.com/shareArticle?",
-		lin_url = "url=" + url,
-		title = "title=" + encodeURI("Light Share lightweight sharing"),
-		summary = "summary=" + encodeURI("A minimally intrusive social sharing button group."),
-		source = "source=" + url;
-	$("#ls5").attr("href", lin_api + lin_url + "&" + title + "&" + summary + "&" + source).attr("target", "_blank");
+	// If no OG data is available, set these properties
+	if (!document.querySelector("meta[property='og:title']")) {
+		var lin_api = "https://www.linkedin.com/shareArticle?",
+			lin_url = "&url=" + url,
+			title = "&title=" + encodeURI("Light Share lightweight sharing"),
+			summary = "&summary=" + encodeURI("A minimally intrusive social sharing button group."),
+			source = "&source=" + url;
+		ls_lin.setAttribute("href", lin_api + lin_url + title + summary + source);
+	}
+	ls_lin.setAttribute("target", "");
+	ls_lin.setAttribute("onclick", newWindow);
 
-	// LightShare show / hide
-	var threshold = 300,
-		$ls = $('.lightShare');
-	$ls.hide();
-	$(window).on('scroll', function () {
-		if ($(window).scrollTop() > threshold) {
-			$ls.show("slide", { direction : "right"}, 'slow');
-		} else {
-			$ls.hide("slide", { direction : "right"}, 'slow');
+	// Show / hide the light share section
+	var threshold = 375;
+	var lightShare = document.getElementsByClassName("lightShare")[0];
+	window.onscroll = function () {
+		console.log(window.pageXOffset);
+
+		// IE 9-
+		if (window.pageYOffset == undefined) {
+			window.pageYOffset = document.documentElement.scrollTop;
 		}
-	});
+
+		if (window.pageYOffset > threshold) {
+			lightShare.style.display = "inherit";
+		} else {
+			lightShare.style.display = "none";
+		}
+	};
 
 	// Google analytics binding
- function addListener(element, type, callback) {
+ 	function addListener(element, type, callback) {
 			if (element.addEventListener) element.addEventListener(type, callback);
 			else if (element.attachEvent) element.attachEvent('on' + type, callback);
+	}
+
+	var shareLabel = ["mail", "facebook", "google plus", "twitter", "linkedin"],
+		ls_buttons = [];
+	ls_buttons.push(ls_mail);
+	ls_buttons.push(ls_fb);
+	ls_buttons.push(ls_gplus);
+	ls_buttons.push(ls_tw);
+	ls_buttons.push(ls_lin);
+
+	for (var i = 0; i < ls_buttons.length; i++) {
+		setAttribute("data-label", shareLabel[i]);
+			addListener(a, 'click', function () {
+				ga('send', 'event', 'social', 'light share', this.getAttribute("data-label"));
+		});
 	}
 }

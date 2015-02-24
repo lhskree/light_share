@@ -5,7 +5,8 @@
 		
 
 		<!-- The rather length email fallback -->
-		<a href="mailto:?subject=Light%20Share%20doesn%27t%20use%20a%20lot%20of%20js&body=Light%20share%20requires%20JavaScript%20to%20run%2C%20but%20it%20gracefully%20degrades%20to%20links.%20http%3A%2F%2Flhskree.github.io%2Flight_share%2F">
+		<a href="mailto:?subject=Light%20Share%20doesn%27t%20use%20a%20lot%20of%20js&body=Light%20share%20requires%20JavaScript%20to%20run%2C%20but%20it%20gracefully%20degrades%20to%20links.%20http%3A%2F%2Flhskree.github.io%2Flight_share%2F"
+		id="ls_mail" target="_blank">
 		<!-- / -->
 			
 
@@ -19,7 +20,7 @@
 
 
 			<!-- Facebook -->
-			<a>
+			<a href="https://www.facebook.com/sharer/sharer.php" id="ls_fb" target="_blank">
 			<!-- The above is pseudo-deprecated. Facebook said they would stop supporting it but then backtracked. It might need revision in the future. -->
 
 
@@ -30,7 +31,13 @@
 		</li>
 
 		<li>
-			<a>
+
+
+			<!-- Google Plus -->
+			<a href="https://plus.google.com/share" id="ls_gplus" target="_blank">
+			<!-- / -->
+
+
 				<svg class="socialIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 					<path  d="M13,0H3C1.343,0,0,1.343,0,3v10c0,1.657,1.343,3,3,3h10c1.657,0,3-1.343,3-3V3     C16,1.343,14.657,0,13,0z M5.768,13.383c-1.771,0-3.265-0.721-3.265-1.873c0-1.169,1.363-2.298,3.134-2.297L6.19,9.208     C5.948,8.973,5.756,8.684,5.756,8.327c0-0.212,0.068-0.415,0.162-0.596l-0.295,0.01c-1.455,0-2.429-1.035-2.429-2.318     c0-1.255,1.345-2.338,2.775-2.338h3.19L8.443,3.601H7.432C8.103,3.859,8.46,4.641,8.46,5.443c0,0.673-0.373,1.253-0.9,1.665     C7.045,7.511,6.948,7.679,6.948,8.021c0,0.292,0.552,0.788,0.84,0.993c0.843,0.596,1.114,1.149,1.114,2.072     C8.902,12.238,7.787,13.383,5.768,13.383z M14,7.019h-2v1.997h-0.999V7.019H9V6h2.001V4H12v2h2V7.019z"/>
 					<path  d="M7.314,5.505C7.172,4.427,6.391,3.561,5.57,3.536C4.749,3.512,4.198,4.337,4.34,5.417     c0.142,1.079,0.923,1.974,1.745,1.998C6.905,7.44,7.457,6.585,7.314,5.505z"/>
@@ -40,7 +47,13 @@
 		</li>
 
 		<li>
-			<a>
+
+
+			<!-- Twitter -->
+			<a href="https://twitter.com/share" id="ls_tw" target="_blank">
+			<!-- / -->
+
+
 				<svg class="socialIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 					<path  d="M13,0H3C1.343,0,0,1.343,0,3v10c0,1.657,1.343,3,3,3h10c1.657,0,3-1.343,3-3V3    C16,1.343,14.657,0,13,0z M11.98,6.204l0.006,0.255c0,2.604-1.981,5.604-5.604,5.604c-1.112,0-2.147-0.326-3.019-0.885    c0.154,0.018,0.311,0.028,0.47,0.028c0.923,0,1.772-0.315,2.446-0.843c-0.862-0.016-1.589-0.586-1.84-1.368    C4.56,9.017,4.682,9.029,4.81,9.029c0.18,0,0.354-0.023,0.519-0.068c-0.901-0.182-1.58-0.977-1.58-1.931V7.005    c0.266,0.148,0.569,0.236,0.892,0.247C4.113,6.899,3.765,6.296,3.765,5.613c0-0.361,0.097-0.699,0.266-0.99    c0.971,1.192,2.423,1.976,4.06,2.058C8.057,6.537,8.04,6.386,8.04,6.232c0-1.087,0.882-1.969,1.97-1.969    c0.566,0,1.078,0.239,1.438,0.622c0.448-0.089,0.87-0.253,1.251-0.478c-0.147,0.46-0.459,0.846-0.866,1.09    c0.397-0.047,0.778-0.154,1.131-0.31C12.7,5.581,12.365,5.928,11.98,6.204z"/>
 				</svg>
@@ -48,7 +61,13 @@
 		</li>
 
 		<li>
-			<a>
+
+
+			<!-- LinkedIn -->
+			<a href="https://www.linkedin.com/shareArticle" id="ls_lin" target="_blank">
+			<!-- / -->
+
+
 				<svg class="socialIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 					<path d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8C16,3.581,12.418,0,8,0z M6,11.875H4v-7h2V11.875    z M5.062,4.446c-0.518,0-0.937-0.42-0.937-0.938c0-0.518,0.42-0.938,0.937-0.938C5.58,2.571,6,2.991,6,3.508    C6,4.026,5.58,4.446,5.062,4.446z M13,11.875h-2V7.547c0-0.507-0.145-0.862-0.768-0.862C9.199,6.685,9,7.547,9,7.547v4.328H7v-7h2    v0.669c0.286-0.219,1-0.668,2-0.668c0.648,0,2,0.388,2,2.732V11.875z"/>
 				</svg>
