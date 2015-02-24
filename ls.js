@@ -22,7 +22,9 @@ window.onload = function () {
 		ls_lin = document.getElementById('ls_lin');
 
 	// Email
-
+	ls_mail.onclick = function () { var lsmi = document.getElementById('lightShareMailInterface'); lsmi.style.display = "block"; console.log("clicked");}
+	ls_mail.setAttribute(h, "#");
+	ls_mail.setAttribute(t, "");
 	// TODO - integrate into various email clients
 
 	// Facebook with App_ID

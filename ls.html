@@ -10,6 +10,11 @@
 	#ls_gplus svg { fill: #dd4b39;}
 	#ls_tw svg { fill: #55acee;}
 	#ls_lin svg {fill:#007bb6;}
+	/* Mail Interface */
+	#lightShareMailInterface { display: none; position: fixed; width: 100%; height: 300px; top: 15%;}
+	#lightShareMailInterface div { display: block; margin: 0 auto; background-color: white; border: 1px solid #999; box-shadow: -2px 2px 5px #777; border-radius: 5px; width: 400px; height: 100%; padding: 1em; z-index: 100}
+	#lightShareMailInterface div a { display: block; margin: 1em auto;}
+	#lightShareMailInterface div input {display: block; margin: .5em auto;}
 </style>
 
 <div class="lightShare">
@@ -88,4 +93,20 @@
 			</a>
 		</li>
 	</ul>
+</div>
+
+<div id="lightShareMailInterface">
+	<div>
+		<form id="ls_composer">
+			<input id="composer_to" type="text" placeholder="Mail to:" required/>
+			<input id="composer_from" type="text" placeholder="From:" required/>
+			<input id="composer_subject" type="text" placeholder="Subject:" requried/>
+			<textarea id="composer_body" placeholder="Body text goes here"></textarea>
+		</form>
+		<a href="" id="ls_yahoo_mail">Yahoo</a>
+		<a href="" id="ls_google_mail">Gmail</a>
+		<a href="" id="ls_hotmail_mail">Hotmail</a>
+		<a href="" id="ls_aol_mail">AOL</a>
+		<a href="" id="ls_default_client">Send using your default email client</a>
+	</div>
 </div>
