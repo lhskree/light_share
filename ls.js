@@ -116,4 +116,13 @@ window.onload = function () {
 	am.onclick = createAOLLink,
 	dc.onclick = createClientLink;
 	x.onclick = closeLSMI;
+
+	window.onkeydown = function (key) {
+		console.log(key);
+		if (key.keyCode == "27") {
+			if (document.getElementById('lightShareMailInterface').style.display !== "none") {
+				document.getElementById('lightShareMailInterface').style.display = "none";
+			}
+		}
+	};
 }
