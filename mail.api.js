@@ -4,9 +4,9 @@ function getEncodedFormData () {
 		subject = document.getElementById('composer_subject').value,
 		body = document.getElementById('composer_body').value,
 		data = {};
-	data.to = encodeURIComponent(escape(to)),
-	data.subject = encodeURIComponent(escape(subject)),
-	data.body = encodeURIComponent(escape(body));
+	data.to = encodeURI(to), // TO massage form data mmmmmmmmmmmmmmmmmm
+	data.subject = escape(subject),
+	data.body = escape(body);
 	return data;
 }
 
