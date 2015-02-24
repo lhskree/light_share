@@ -42,13 +42,15 @@ window.onload = function () {
 
 	// LinkedIn
 	// If no OG data is available, set these properties
+	var lin_api = "https://www.linkedin.com/shareArticle?",
+		lin_url = "&url=" + url;
 	if (!document.querySelector("meta[property='og:title']")) {
-		var lin_api = "https://www.linkedin.com/shareArticle?",
-			lin_url = "&url=" + url,
-			title = "&title=" + encodeURI("Light Share lightweight sharing"),
+		var title = "&title=" + encodeURI("Light Share lightweight sharing"),
 			summary = "&summary=" + encodeURI("A minimally intrusive social sharing button group."),
 			source = "&source=" + url;
 		ls_lin.setAttribute("href", lin_api + lin_url + title + summary + source);
+	} else {
+		ls_lin.setAttribute("href", lin_api + lin_url);
 	}
 	ls_lin.setAttribute("target", "");
 	ls_lin.setAttribute("onclick", newWindow);
