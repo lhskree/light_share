@@ -108,20 +108,19 @@ window.onload = function () {
 		hm = document.getElementById('ls_hotmail_mail'),
 		am = document.getElementById('ls_aol_mail'),
 		dc = document.getElementById('ls_default_client'),
-		x = document.getElementById('close');
+		x = document.getElementById('close'),
+		lsmi = document.getElementById('lightShareMailInterface');
 
 	gm.onclick = createGoogleLink,
 	ym.onclick = createYahooLink,
 	hm.onclick = createHotmailLink,
 	am.onclick = createAOLLink,
 	dc.onclick = createClientLink;
-	x.onclick = closeLSMI;
-
+	x.onclick = function () { lsmi.style.display = "none"; };
 	window.onkeydown = function (key) {
-		console.log(key);
 		if (key.keyCode == "27") {
-			if (document.getElementById('lightShareMailInterface').style.display !== "none") {
-				document.getElementById('lightShareMailInterface').style.display = "none";
+			if (lmsi.style.display !== "none") {
+				lmsi.style.display = "none";
 			}
 		}
 	};
