@@ -101,4 +101,17 @@ window.onload = function () {
 				ga('send', 'event', 'social', 'light share', this.getAttribute("data-label"));
 		});
 	}
+
+	// Register Light Share Mail Interface events
+	var gm = document.getElementById('ls_google_mail'),
+		ym = document.getElementById('ls_yahoo_mail'),
+		hm = document.getElementById('ls_hotmail_mail'),
+		am = document.getElementById('ls_aol_mail'),
+		dc = document.getElementById('ls_default_client');
+
+	gm.onclick = createGoogleLink,
+	ym.onclick = createYahooLink,
+	hm.onclick = createHotmailLink,
+	am.onclick = createAOLLink,
+	dc.onclick = createClientLink;
 }
