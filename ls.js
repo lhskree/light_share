@@ -107,11 +107,13 @@ window.onload = function () {
 		ym = document.getElementById('ls_yahoo_mail'),
 		hm = document.getElementById('ls_hotmail_mail'),
 		am = document.getElementById('ls_aol_mail'),
-		dc = document.getElementById('ls_default_client');
+		dc = document.getElementById('ls_default_client'),
+		x = document.getElementById('close');
 
 	gm.onclick = createGoogleLink,
 	ym.onclick = createYahooLink,
 	hm.onclick = createHotmailLink,
 	am.onclick = createAOLLink,
 	dc.onclick = createClientLink;
+	x.onclick = closeLSMI;
 }
