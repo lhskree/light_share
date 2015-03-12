@@ -1,5 +1,5 @@
 // Various mail APIs in digestible js
-var dg = function(id){ return dg(id); }
+var dg = function(id){ return document.getElementById(id); }
 
 function getEncodedFormData () {
 	var to = dg('composer_to').value,
