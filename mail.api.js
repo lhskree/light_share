@@ -1,8 +1,10 @@
 // Various mail APIs in digestible js
+var dg = function(id){ return dg(id); }
+
 function getEncodedFormData () {
-	var to = document.getElementById('composer_to').value,
-		subject = document.getElementById('composer_subject').value,
-		body = document.getElementById('composer_body').value,
+	var to = dg('composer_to').value,
+		subject = dg('composer_subject').value,
+		body = dg('composer_body').value,
 		data = {};
 	data.to = encodeURI(to), // TO massage form data mmmmmmmmmmmmmmmmmm
 	data.subject = escape(subject),
@@ -12,7 +14,7 @@ function getEncodedFormData () {
 
 function createGoogleLink () {
 	var data = getEncodedFormData(),
-		link = document.getElementById('ls_google_mail'),
+		link = dg('ls_google_mail'),
 		url = "http://mail.google.com/mail?view=cm&fs=1&tf=1",
 		to = "&to=" + data.to,
 		subject = "&su=" + data.subject,
@@ -22,7 +24,7 @@ function createGoogleLink () {
 
 function createYahooLink () {
 	var data = getEncodedFormData(),
-		link = document.getElementById('ls_yahoo_mail'),
+		link = dg('ls_yahoo_mail'),
 		url = "http://compose.mail.yahoo.com/?",
 		to = "to=" + data.to,
 		subject = "&subject=" + data.subject,
@@ -32,7 +34,7 @@ function createYahooLink () {
 
 function createHotmailLink () {
 	var data = getEncodedFormData(),
-		link = document.getElementById('ls_hotmail_mail'),
+		link = dg('ls_hotmail_mail'),
 		url = "http://mail.live.com/mail/EditMessageLight.aspx?n=",
 		to = "&to=" + data.to,
 		subject = "&subject=" + data.subject,
@@ -42,7 +44,7 @@ function createHotmailLink () {
 
 function createAOLLink () {
 	var data = getEncodedFormData(),
-		link = document.getElementById('ls_aol_mail'),
+		link = dg('ls_aol_mail'),
 		url = "http://webmail.aol.com/Mail/ComposeMessage.aspx?",
 		to = "to=" + data.to,
 		subject = "&subject=" + data.subject,
@@ -52,7 +54,7 @@ function createAOLLink () {
 
 function createClientLink () {
 	var data = getEncodedFormData(),
-		link = document.getElementById('ls_default_client'),
+		link = dg('ls_default_client'),
 		url = "mailto:",
 		to = data.to + "?",
 		subject = "subject=" + data.subject,

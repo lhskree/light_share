@@ -5,6 +5,7 @@ window.onload = function () {
 		h = "href",
 		o = "onclick";
 
+	var dg = function(id){ return dg(id); }
 
 	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute(h) : // Looks for canonical URL first
 						document.querySelector("meta[property='og:url']") ? document.querySelector("meta[property='og:url']").getAttribute("content") : // OG fallback
@@ -15,14 +16,14 @@ window.onload = function () {
 	var newWindow = "window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500');return false;";
 
 	// The sharing buttons
-	var ls_mail = document.getElementById('ls_mail'),
-		ls_fb = document.getElementById('ls_fb'),
-		ls_gplus = document.getElementById('ls_gplus'),
-		ls_tw = document.getElementById('ls_tw'),
-		ls_lin = document.getElementById('ls_lin');
+	var ls_mail = dg('ls_mail'),
+		ls_fb = dg('ls_fb'),
+		ls_gplus = dg('ls_gplus'),
+		ls_tw = dg('ls_tw'),
+		ls_lin = dg('ls_lin');
 
 	// Email
-	ls_mail.onclick = function () { var lsmi = document.getElementById('lightShareMailInterface'); lsmi.style.display = "block";}
+	ls_mail.onclick = function () { var lsmi = dg('lightShareMailInterface'); lsmi.style.display = "block";}
 	ls_mail.setAttribute(h, "#");
 	ls_mail.setAttribute(t, "");
 	// TODO - integrate into various email clients
@@ -103,13 +104,13 @@ window.onload = function () {
 	}
 
 	// Register Light Share Mail Interface events
-	var gm = document.getElementById('ls_google_mail'),
-		ym = document.getElementById('ls_yahoo_mail'),
-		hm = document.getElementById('ls_hotmail_mail'),
-		am = document.getElementById('ls_aol_mail'),
-		dc = document.getElementById('ls_default_client'),
-		x = document.getElementById('close'),
-		lsmi = document.getElementById('lightShareMailInterface');
+	var gm = dg('ls_google_mail'),
+		ym = dg('ls_yahoo_mail'),
+		hm = dg('ls_hotmail_mail'),
+		am = dg('ls_aol_mail'),
+		dc = dg('ls_default_client'),
+		x = dg('close'),
+		lsmi = dg('lightShareMailInterface');
 
 	gm.onclick = createGoogleLink,
 	ym.onclick = createYahooLink,
