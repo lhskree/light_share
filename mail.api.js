@@ -12,18 +12,12 @@ function getEncodedFormData () {
 	return data;
 }
 
-function createGenericLink(options) {
-	var data = getEncodedFormData(),
-		link = dg(options.link),
-		url = options.url,
-		to = options.to + data.to,
-		subject = options.subject + data.subject,
-		body = options.body + data.body
-		link.setAttribute("href", url + to + subject + body);
+function createGenericLink(o) {
+	var d = getEncodedFormData(),
+		l = dg(o.l),
+		u = o.u,
+		t = o.t + d.to,
+		s = o.s + d.subject,
+		b = o.b + d.body
+		l.setAttribute("href", u + t + s + b);
 }
-
-createGenericLink({link:'ls_google_mail',url:'http://mail.google.com/mail?view=cm&fs=1&tf=1',to:'&to=',subject:'&su=',body:'&body='}); 							// Google
-createGenericLink({link:'ls_yahoo_mail',url:'http://compose.mail.yahoo.com/?',to:'to=',subject:'&subject=',body:'&body='}); 												// Yahoo
-createGenericLink({link:'ls_hotmail_mail',url:'http://mail.live.com/mail/EditMessageLight.aspx?n=',to:'&to=',subject:'&subject=',body:'&body='}); 	// Hotmail
-createGenericLink({link:'ls_aol_mail',url:'http://webmail.aol.com/Mail/ComposeMessage.aspx?',to:'&to=',subject:'&subject=',body:'&body='});					// AOL
-createGenericLink({link:'ls_default_client',url:'mailto:',to:'',subject:'?subject=',body:'&body='});																								// Native Client
