@@ -113,15 +113,15 @@ window.onload = function () {
 		lsmi = dg('lightShareMailInterface');
 
 	// Google
-	gm.onclick = createGenericLink({l:'ls_google_mail',u:'http://mail.google.com/mail?view=cm&fs=1&tf=1',t:'&to=',s:'&su=',b:'&body='}),
+	gm.onclick = function(){createGenericLink({l:'ls_google_mail',u:'http://mail.google.com/mail?view=cm&fs=1&tf=1',t:'&to=',s:'&su=',b:'&body='});},
 	// Yahoo
-	ym.onclick = createGenericLink({l:'ls_yahoo_mail',u:'http://compose.mail.yahoo.com/?',t:'to=',s:'&subject=',b:'&body='}),
+	ym.onclick = function(){createGenericLink({l:'ls_yahoo_mail',u:'http://compose.mail.yahoo.com/?',t:'to=',s:'&subject=',b:'&body='});},
 	// Hotmail
-	hm.onclick = createGenericLink({l:'ls_hotmail_mail',u:'http://mail.live.com/mail/EditMessageLight.aspx?n=',t:'&to=',s:'&subject=',b:'&body='}),
+	hm.onclick = function(){createGenericLink({l:'ls_hotmail_mail',u:'http://mail.live.com/mail/EditMessageLight.aspx?n=',t:'&to=',s:'&subject=',b:'&body='});},
 	// AOL
-	am.onclick = createGenericLink({l:'ls_aol_mail',u:'http://webmail.aol.com/Mail/ComposeMessage.aspx?',t:'&to=',s:'&subject=',b:'&body='}),
+	am.onclick = function(){createGenericLink({l:'ls_aol_mail',u:'http://webmail.aol.com/Mail/ComposeMessage.aspx?',t:'&to=',s:'&subject=',b:'&body='});},
 	// Default Client
-	dc.onclick = createGenericLink({l:'ls_default_client',u:'mailto:',t:'',s:'?subject=',b:'&body='});
+	dc.onclick = function(){createGenericLink({l:'ls_default_client',u:'mailto:',t:'',s:'?subject=',b:'&body='});};
 	x.onclick = function () { lsmi.style.display = "none"; };
 	window.onkeydown = function (key) {
 		if (key.keyCode == "27") {
