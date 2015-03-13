@@ -23,7 +23,8 @@ window.onload = function () {
 		ls_fb = dg('ls_fb'),
 		ls_gplus = dg('ls_gplus'),
 		ls_tw = dg('ls_tw'),
-		ls_lin = dg('ls_lin');
+		ls_lin = dg('ls_lin'),
+		ls_pin = dg('ls_pin');
 
 	// Email
 	ls_mail.onclick = function () { var lsmi = dg('lightShareMailInterface'); lsmi.style.display = "block";}
@@ -66,6 +67,13 @@ window.onload = function () {
 	ls_lin.setAttribute(t, "");
 	ls_lin.setAttribute(o, newWindow);
 
+	// Pinterest
+	var pin_api = "https://www.pinterest.com/pin/create/button/?",
+		pin_url = "url=" + url,
+		// Pinterest doesn't automatically look at Open Graph data
+		media =  "&media=" + document.querySelector("meta[property='og:image']").getAttribute("content"),
+		description = "&description=" + document.querySelector("meta[property='og:description']").getAttribute("content");
+
 	// Show / hide the light share section
 	var threshold = 50;
 	var lightShare = document.getElementsByClassName("lightShare")[0];
@@ -90,13 +98,14 @@ window.onload = function () {
 			else if (element.attachEvent) element.attachEvent('on' + type, callback);
 	}
 
-	var shareLabel = ["mail", "facebook", "google plus", "twitter", "linkedin"],
+	var shareLabel = ["mail", "facebook", "google plus", "twitter", "linkedin", "pinterest"],
 		ls_buttons = [];
 	ls_buttons.push(ls_mail);
 	ls_buttons.push(ls_fb);
 	ls_buttons.push(ls_gplus);
 	ls_buttons.push(ls_tw);
-	ls_buttons.push(ls_lin);
+	ls_buttons.push(ls_lin),
+	ls_buttons.push(ls_pin);
 
 	for (var i = 0; i < ls_buttons.length; i++) {
 		ls_buttons[i].setAttribute("data-label", shareLabel[i]);
