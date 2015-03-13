@@ -71,8 +71,14 @@ window.onload = function () {
 	var pin_api = "https://www.pinterest.com/pin/create/button/?",
 		pin_url = "url=" + url,
 		// Pinterest doesn't automatically look at Open Graph data
-		media =  "&media=" + document.querySelector("meta[property='og:image']").getAttribute("content"),
-		description = "&description=" + document.querySelector("meta[property='og:description']").getAttribute("content");
+		img = document.querySelector("meta[property='og:image']") ?
+			encodeURI(document.querySelector("meta[property='og:image']").getAttribute("content")) : 
+			encodeURI("http://lhskree.github.io/light_share/Chinchilla_T.png"), // <<<----------------------------- Set Me, Please! ----
+		media =  "&media=" + img,
+		desc = document.querySelector("meta[property='og:description']") ?
+			encodeURI(document.querySelector("meta[property='og:description']").getAttribute("content")) :
+			encodeURI("A lightweight sharing API to share cool things with happy chinchillas."),
+		description = "&description=" + desc;
 	ls_pin.setAttribute(h, pin_api + pin_url + media + description);
 	ls_pin.setAttribute(t, "");
 	ls_pin.setAttribute(o, newWindow);

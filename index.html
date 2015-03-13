@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<!-- Lightshare will look for canonical URLs first for sharing -->
 	<link rel="canonical" href="http://lhskree.github.io/light_share/"/>
 	<title>Light Share</title>
 	<meta property="og:title" content="Light Share" />
-	<!-- next, it will look for open graph data to determine the URL -->
+
+	<!-- Next, it will look for open graph data to determine the URL -->
 	<meta property="og:url" content="http://lhskree.github.io/light_share" />
 	<meta property="og:image" content="http://www.randomlists.com/img/animals/chinchilla.jpg" />
 	<meta property="og:description" content="A lightweight way to share cool sites to happy little chinchilla friends." />
 
+	<!-- JQuery is just showing up here for $GET -->
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+	<!-- Include these files or the minified ls.min.js -->
 	<script src="./ls.js"></script>
 	<script src="./mail.api.js"></script>
 
-	<!-- Google Analytics, necessary to track the share clicks -->
+	<!-- The styling for light share. This should be replaced with your own custom styling!!! -->
+	<link rel="stylesheet" href="./ls.css">
+
+	<!-- Google Analytics, necessary to track the share clicks. Remember to set your own tracking code!!! -->
 	<script>	
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	  ga('create', 'UA-37314706-2', 'auto');
+	  ga('create', 'UA-37314706-2', 'auto'); // <<<----------------------------- Set Me, Please! ----
 	  ga('send', 'pageview');
 	</script>
 
@@ -33,15 +41,13 @@
 	.wrapper p {text-align: justify;}
 	</style>
 
-	<!-- The styling for light share itself -->
-	<link rel="stylesheet" href="./ls.css">
-
 </head>
 <body>
 
 <div class="wrapper">
 	<img src="./Chinchilla_T.png" alt='A happy little chinchilla friend.'/> <!-- (Awwww)lt tags are important... -->
 	<h1>Light Share</h1>
+	<!-- Thank you, hipster ipsum -->
 	<p>Ethical salvia cardigan, DIY fanny pack bicycle rights butcher 8-bit Odd Future Austin pickled scenester Vice Portland PBR. High Life Carles drinking vinegar DIY, XOXO viral tofu Echo Park. Cred Helvetica dreamcatcher roof party. Master cleanse four dollar toast umami High Life plaid. Selvage drinking vinegar dreamcatcher Helvetica, letterpress 8-bit pork belly migas banh mi. Authentic butcher meh occupy Intelligentsia cardigan. PBR gentrify roof party organic, disrupt dreamcatcher XOXO.J</p>
 
 	<p>Kale chips flexitarian taxidermy, scenester brunch vegan aesthetic post-ironic chillwave viral butcher iPhone mixtape Vice biodiesel. Vice occupy squid, mixtape crucifix 3 wolf moon disrupt Helvetica normcore sriracha ethical. Keytar jean shorts PBR&B, Vice beard four loko four dollar toast typewriter kale chips gastropub. Gentrify taxidermy American Apparel ethical. Bushwick small batch polaroid, seitan direct trade sriracha literally PBR health goth Neutra roof party fashion axe. Umami brunch food truck pug chambray cliche listicle. Readymade craft beer Banksy, Intelligentsia squid fanny pack retro plaid.</p>
@@ -63,9 +69,7 @@ $(document).ready( function () {
 		$("body").append(data);
 	});
 });
-</script
-
-
+</script>
 
 </div>
 </body>

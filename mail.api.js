@@ -10,7 +10,7 @@ function getEncodedFormData () {
 	data.subject = escape(subject), // MORE MASSAGE PLEASE
 	data.body = escape(body); // The rational for using escape rather than encodeURI is that some email query strings will ignore encoded <> characters
 	return data;
-	/* The rational for using escape rather than encodeURI is that some email query strings will ignore encoded <> characters
+	/* The rationale for using escape rather than encodeURI is that some email query strings will ignore encoded <> characters
 	* Since you have to send this message through a webmail client or a native client anyways, it can't be abused by robots
 	* any more than a webmail client can be abused by robots
 	*/
@@ -18,10 +18,10 @@ function getEncodedFormData () {
 
 function createGenericLink(o) {
 	var d = getEncodedFormData(),
-		l = dg(o.l),
-		u = o.u,
-		t = o.t + d.to,
-		s = o.s + d.subject,
-		b = o.b + d.body
-		l.setAttribute("href", u + t + s + b);
+		l = dg(o.l), // Link
+		u = o.u, // URL
+		t = o.t + d.to, // To
+		s = o.s + d.subject, // Subject
+		b = o.b + d.body // Body
+		l.setAttribute("href", u + t + s + b); // href =  url to subject body
 }
