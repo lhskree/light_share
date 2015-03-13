@@ -3,16 +3,16 @@
 <head>
 
 	<!-- Lightshare will look for canonical URLs first for sharing -->
-	<link rel="canonical" href="http://lhskree.github.io/light_share/"/>
+	<link rel="canonical" href="http://lhskree.github.io/light_share/"/> <!-- <<<================= Set Me, Please! ====== -->
 	<title>Light Share</title>
-	<meta property="og:title" content="Light Share" />
 
 	<!-- Next, it will look for open graph data to determine the URL -->
-	<meta property="og:url" content="http://lhskree.github.io/light_share" />
-	<meta property="og:image" content="http://www.randomlists.com/img/animals/chinchilla.jpg" />
-	<meta property="og:description" content="A lightweight way to share cool sites to happy little chinchilla friends." />
+	<meta property="og:title" content="Light Share" /> <!-- <<<================= Set Me, Please! ====== -->
+	<meta property="og:url" content="http://lhskree.github.io/light_share" /> <!-- <<<================= Set Me, Please! ====== -->
+	<meta property="og:image" content="http://www.randomlists.com/img/animals/chinchilla.jpg" /> <!-- <<<================= Set Me, Please! ====== -->
+	<meta property="og:description" content="A lightweight way to share cool sites to happy little chinchilla friends." /> <!-- <<<================= Set Me, Please! ====== -->
 
-	<!-- JQuery is just showing up here for $GET -->
+	<!-- jQuery is just showing up here for $GET -->
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
 	<!-- Include these files or the minified ls.min.js -->
@@ -64,6 +64,7 @@
 
 <script>
 // Let's just use jQuery to make this easier & cleaner for now
+// You'll probably want to inlude the html in your template. Alternately, you can use jQuery, duh
 $(document).ready( function () {
 	$.get("./ls.html").done( function (data) {
 		$("body").append(data);
