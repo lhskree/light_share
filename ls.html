@@ -1,27 +1,3 @@
-<!-- Style is included -->
-
-<style>
-.socialIcon { height: 40px; width: 40px; }
-	.lightShare { position: fixed; right: 0; top: 15%; background-color: white; box-shadow: -2px 2px 5px #777; border-radius: 5px 0 0 5px; }
-	.lightShare ul { list-style: none; padding: 0; margin: 0; }
-	.lightShare ul li { margin: 5px}
-	#ls_mail svg { fill: #09a9a9;}
-	#ls_fb svg { fill: #3B5998;}
-	#ls_gplus svg { fill: #dd4b39;}
-	#ls_tw svg { fill: #55acee;}
-	#ls_lin svg {fill:#007bb6;}
-	/* Mail Interface */
-	#lightShareMailInterface { display: none; position: fixed; width: 100%; height: 450px; top: 15%;}
-	#lightShareMailInterface div { display: block; margin: 0 auto; background-color: white; border: 1px solid #999; box-shadow: -2px 2px 5px #777; border-radius: 5px; width: 550px; height: 100%; padding: 1em; z-index: 100}
-	#lightShareMailInterface div a { text-decoration: none; display: inline-block; margin: 1em auto; padding: .5em; background-color: #444; color: white; border-radius: 5px; transition: .5s;}
-	#lightShareMailInterface a:hover {background-color: lightpink; transition: .5s;}
-	#lightShareMailInterface div input {display: block; margin: .5em auto; width: 100%; box-sizing: border-box; padding: .5em 1em; font-size: 1.25em;font-family: 'Ariel', 'Helvetica', sans-serif;}
-	#lightShareMailInterface div textarea {display: block; width: 100%; height: 200px;box-sizing: border-box; padding: .5em 1em; font-size: 1.25em; font-family: 'Ariel', 'Helvetica', sans-serif;}
-	#lightShareMailInterface input:focus, #lightShareMailInterface textarea:focus {outline: lightpink auto 5px;outline-offset:-2px;}
-	#close {text-align: right; padding: 1em .5em; font-size: 20px; color: #444; transition: .5s; cursor: pointer;}
-	#close:hover {color: lightpink; padding-left: .75em; transition: .5s;}
-</style>
-
 <div class="lightShare">
 	<ul>
 		<li>
@@ -29,10 +5,12 @@
 		
 
 		<!-- The rather length email fallback -->
+		<!-- This should be customized to your own URL-encoded message by changing the subject and body -->
 		<a href="mailto:?subject=Light%20Share%20doesn%27t%20use%20a%20lot%20of%20js&body=Light%20share%20requires%20JavaScript%20to%20run%2C%20but%20it%20gracefully%20degrades%20to%20links.%20http%3A%2F%2Flhskree.github.io%2Flight_share%2F"
 		id="ls_mail" target="_blank">
+
 		<!-- / -->
-			
+			<!-- Replace SVG with png or whatever icons you want. -->
 
 			<svg class="socialIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="485.211px" height="485.211px" viewBox="0 0 485.211 485.211" style="enable-background:new 0 0 485.211 485.211;" xml:space="preserve">
 					<path d="M485.211,363.906c0,10.637-2.992,20.498-7.785,29.174L324.225,221.67l151.54-132.584   c5.895,9.355,9.446,20.344,9.446,32.219V363.906z M242.606,252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651   c-10.524,0-20.271,2.905-28.889,7.642L242.606,252.793z M301.393,241.631l-48.809,42.734c-2.855,2.487-6.41,3.729-9.978,3.729   c-3.57,0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667,415.23c9.299,5.834,20.197,9.329,31.983,9.329h363.911   c11.784,0,22.687-3.495,31.983-9.329L301.393,241.631z M9.448,89.085C3.554,98.44,0,109.429,0,121.305v242.602   c0,10.637,2.978,20.498,7.789,29.174l153.183-171.44L9.448,89.085z"/>
@@ -97,9 +75,22 @@
 				</svg>
 			</a>
 		</li>
+
+		<li>
+
+
+			<!-- Pinterest -->
+			<a href="" id="ls_pin" target="_blank">
+			<!-- / -->
+				<svg class="socialIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"  viewBox="0 0 533.333 533.333" style="enable-background:new 0 0 533.333 533.333;" xml:space="preserve">
+					<path d="M266.667,0C119.391,0,0,119.391,0,266.667c0,147.275,119.388,266.666,266.667,266.666   c147.275,0,266.667-119.391,266.667-266.666C533.333,119.391,413.942,0,266.667,0z M292.523,356.311   c-24.229-1.882-34.397-13.883-53.388-25.421c-10.448,54.781-23.21,107.302-61.01,134.734   c-11.669-82.795,17.132-144.981,30.505-210.997c-22.804-38.389,2.744-115.643,50.844-96.601   c59.18,23.41-51.25,142.712,22.881,157.613c77.406,15.556,109.004-134.302,61.011-183.035   c-69.354-70.367-201.874-1.604-185.578,99.144c3.966,24.631,29.412,32.103,10.168,66.095c-44.385-9.839-57.63-44.845-55.925-91.517   c2.744-76.393,68.638-129.877,134.733-137.274c83.584-9.356,162.035,30.681,172.867,109.311   C431.826,267.107,381.899,363.223,292.523,356.311z"/>
+				</svg>
+			</a>
+		</li>
 	</ul>
 </div>
 
+<!-- This is the interface for the mail client -->
 <div id="lightShareMailInterface">
 	<div>
 		<span id="close">Close</span>
@@ -108,6 +99,7 @@
 			<input id="composer_to" type="text" placeholder="Mail to:" required/>
 			<input id="composer_subject" type="text" placeholder="Subject:" requried/>
 			<textarea id="composer_body" placeholder="Body text goes here" required maxlength="250"></textarea>
+			<span id="ltrCtr"></span>
 		</form>
 		<a href="" id="ls_yahoo_mail">Yahoo</a>
 		<a href="" id="ls_google_mail">Gmail</a>

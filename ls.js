@@ -3,13 +3,16 @@ window.onload = function () {
 	// Sneaky min optimization
 	var t = "target",
 		h = "href",
-		o = "onclick";
+		o = "onclick",
+		dg = function(id){ return document.getElementById(id); }
 
-	var dg = function(id){ return document.getElementById(id); }
-
-	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute(h) : // Looks for canonical URL first
-						document.querySelector("meta[property='og:url']") ? document.querySelector("meta[property='og:url']").getAttribute("content") : // OG fallback
-						document.URL; // Finally, just document.URL
+	// Get the current page's URL, through various means
+						// Looks for canonical URL first
+	var url = document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']").getAttribute(h) :
+						// Open Graph Fallback
+						document.querySelector("meta[property='og:url']") ? document.querySelector("meta[property='og:url']").getAttribute("content") :
+						// Finally, just document.URL
+						document.URL;
 	url = encodeURIComponent(url);
 
 	// Opens links in a new window
@@ -26,11 +29,10 @@ window.onload = function () {
 	ls_mail.onclick = function () { var lsmi = dg('lightShareMailInterface'); lsmi.style.display = "block";}
 	ls_mail.setAttribute(h, "#");
 	ls_mail.setAttribute(t, "");
-	// TODO - integrate into various email clients
 
 	// Facebook with App_ID
 	var fb_api = "https://www.facebook.com/dialog/share?",
-		id = "&app_id=787311388023796", // This is a unique id like Google Analytics API key
+		id = "&app_id=787311388023796", // <<<----------------------------- Set Me, Please! ----
 		display = "&display=popup",
 		href = "&href=" + url,
 		redirect = "&redirect_uri=" + url;
@@ -50,12 +52,12 @@ window.onload = function () {
 	ls_tw.setAttribute(o, newWindow);
 
 	// LinkedIn
-	// If no OG data is available, set these properties
+	// If no Open data is available, set these properties as a fallback with the general settings for the page
 	var lin_api = "https://www.linkedin.com/shareArticle?",
 		lin_url = "&url=" + url;
 	if (!document.querySelector("meta[property='og:title']")) {
-		var title = "&title=" + encodeURI("Light Share lightweight sharing"),
-			summary = "&summary=" + encodeURI("A minimally intrusive social sharing button group."),
+		var title = "&title=" + encodeURI("Light Share lightweight sharing"), // <<<----------------------------- Set Me, Please! ----
+			summary = "&summary=" + encodeURI("Social sharing for Chinchilla friends."), // <<<----------------------------- Set Me, Please! ----
 			source = "&source=" + url;
 		ls_lin.setAttribute(h, lin_api + lin_url + title + summary + source);
 	} else {
